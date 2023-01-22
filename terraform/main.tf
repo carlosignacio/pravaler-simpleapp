@@ -36,8 +36,8 @@ module "microservices_node_pool" {
   min_nodes                   = var.min_nodes
   machine_type                = "n2-standard-4"
   #machine_type                = "t2a-standard-1"
-  label_name                  = "certi-microservices-np"
-  label_node                  = "certi-microservices-np"
+  label_name                  = "pravaler-microservices-np"
+  label_node                  = "pravaler-microservices-np"
 
   depends_on                  = [module.cluster_gke]
 }
