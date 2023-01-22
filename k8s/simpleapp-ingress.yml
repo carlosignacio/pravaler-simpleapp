@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: simpleapp-ingress
+  namespace: pravaler
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: app.prova
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: simpleapp-service
+                port: 
+                  number: 8080    
+          - path: /health
+            pathType: Prefix
+            backend:
+              service:
+                name: simpleapp-service
+                port: 
+                  number: 8080
+  ingressClassName: nginx                  

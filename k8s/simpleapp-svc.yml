@@ -1,0 +1,22 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: simpleapp
+  labels:
+    app: app
+spec:
+  containers:
+    - name: simpleapp
+      image: cadardo/simpleapp-python
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: simpleapp-service
+spec:
+  selector:
+    app: app
+  ports:
+    - port: 8001 # Default port for image
